@@ -5,7 +5,7 @@ def remove_char_at(str, n):
     the character at the position n.
     """
 
-    if n > 0:
+    if n >= 0:
         copy_str = str[:n] + str[n + 1:]
     else:
         copy_str = str
