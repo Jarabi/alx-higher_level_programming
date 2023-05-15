@@ -8,10 +8,10 @@ def max_integer(my_list=[]):
     Return:
         Largest integer
     """
-    max_int = my_list[0]
-
     if len(my_list) == 0:
-        return None
+        return (None)
+
+    max_int = my_list[0]
 
     for el in my_list:
         if el > max_int:
