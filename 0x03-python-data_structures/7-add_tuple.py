@@ -20,6 +20,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
 
     return (a, b)
 
+
 def check_tuple(lst, tupl):
     for idx, el in enumerate(tupl):
         lst[idx] = el
