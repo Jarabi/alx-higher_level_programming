@@ -12,7 +12,6 @@ def print_matrix_integer(matrix=[[]]):
         for idx, elem  in enumerate(outer):
             print("{:d}".format(elem), end="")
 
-            if idx == 2:
-                continue
-            print(" ", end="")
+            if idx < len(outer) -1:
+                print(" ", end="")
         print()
