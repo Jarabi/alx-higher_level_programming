@@ -8,7 +8,7 @@ def print_matrix_integer(matrix=[[]]):
     Return:
         Nothing
     """
-    if len(matrix):
+    if len(matrix) > 0:
         for outer in matrix:
             for k in range(0, len(outer)):
                 print("{:d}".format(outer[k]), end="")
