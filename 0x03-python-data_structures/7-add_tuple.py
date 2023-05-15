@@ -7,19 +7,19 @@ def add_tuple(tuple_a=(), tuple_b=()):
         tuple_a: First tuple
         tuple_b: Second tuple
     Return:
-        Another tuple with the summed up elements
+        Tuple with the summed up elements
     """
-    arr = []
+    lst_a = [0, 0]
+    lst_b = [0, 0]
 
-    if len(tuple_b) < 2:
-        if len(tuple_b) == 1:
-            tup_b = (tuple_b[0], 0)
-        else:
-            tup_b = (0, 0)
-    else:
-        tup_b = tuple_b
+    check_tuple(lst_a, tuple_a)
+    check_tuple(lst_b, tuple_b)
 
-    for el in range(0, len(tuple_a)):
-        arr.append(tuple_a[el] + tup_b[el])
+    a = lst_a[0] + lst_b[0]
+    b = lst_a[1] + lst_b[1]
 
-    return (tuple(arr))
+    return (a, b)
+
+def check_tuple(lst, tupl):
+    for idx, el in enumerate(tupl):
+        lst[idx] = el
