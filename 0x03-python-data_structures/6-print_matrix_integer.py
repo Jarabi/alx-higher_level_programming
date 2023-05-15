@@ -9,9 +9,9 @@ def print_matrix_integer(matrix=[[]]):
         Nothing
     """
     for outer in matrix:
-        for idx, elem  in enumerate(outer):
+        for idx, elem in enumerate(outer):
             print("{:d}".format(elem), end="")
 
-            if idx < len(outer) -1:
+            if idx < len(outer) - 1:
                 print(" ", end="")
         print()
