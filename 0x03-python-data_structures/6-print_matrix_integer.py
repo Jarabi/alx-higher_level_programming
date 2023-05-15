@@ -8,12 +8,11 @@ def print_matrix_integer(matrix=[[]]):
     Return:
         Nothing
     """
-    if len(matrix) > 0:
-        for outer in matrix:
-            for k in range(0, len(outer)):
-                print("{:d}".format(outer[k]), end="")
+    for outer in matrix:
+        for idx, elem  in enumerate(outer):
+            print("{:d}".format(elem), end="")
 
-                if k == 2:
-                    continue
-                print(" ", end="")
-            print()
+            if idx == 2:
+                continue
+            print(" ", end="")
+        print()
