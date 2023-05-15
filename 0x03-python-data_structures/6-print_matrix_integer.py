@@ -10,7 +10,7 @@ def print_matrix_integer(matrix=[[]]):
     """
     for outer in matrix:
         for k in range(0, len(outer)):
-            print("{}".format(outer[k]), end="")
+            print("{:d}".format(outer[k]), end="")
 
             if k == 2:
                 continue
