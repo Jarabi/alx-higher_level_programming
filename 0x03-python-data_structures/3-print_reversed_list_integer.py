@@ -8,8 +8,6 @@ def print_reversed_list_integer(my_list=[]):
     Return:
         Nothing
     """
-    start = len(my_list) - 1
-    step = -1
-
-    for m in range(start, -1, step):
-        print("{:d}".format(my_list[m]))
+    if my_list:
+        for m in my_list[::-1]:
+            print("{:d}".format(m))
