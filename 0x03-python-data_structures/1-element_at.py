@@ -2,7 +2,7 @@
 
 def element_at(my_list, idx):
     """Retrieves an element from a list
-    
+
     Args:
         my_list: the list
         idx: index at which to retrieve element
