@@ -6,14 +6,14 @@ def square_matrix_simple(matrix=[]):
     Args:
         matrix: A 2-dimensional array
     """
-    squares = []
+    squares= []
 
-    # Create identical array to matrix with zeros
+    # Make copy of matrix array
     for _ in range(0, len(matrix)):
         row = [0] * len(matrix[_])
         squares.append(row)
 
-    # Populate zero array with squares of matrix elements
+    # Update new array with squares of matrix elements
     for row in range(0, len(matrix)):
         for col in range(0, len(matrix[row])):
             squares[row][col] = matrix[row][col] ** 2
