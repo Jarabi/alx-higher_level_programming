@@ -7,8 +7,8 @@ def best_score(a_dictionary):
         return (None)
 
     # Get first key to use for comparison
-    highest_key = list(a_dictionary)[0]
-    highest_value = a_dictionary.get(highest_key)
+    highest_key = list(a_dictionary.keys())[0]
+    highest_value = a_dictionary[highest_key]
 
     for k, v in a_dictionary.items():
         if v > highest_value:
