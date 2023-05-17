@@ -6,7 +6,7 @@ def square_matrix_simple(matrix=[]):
     Args:
         matrix: A 2-dimensional array
     """
-    squares= []
+    squares = []
 
     # Make copy of matrix array
     for _ in range(0, len(matrix)):
