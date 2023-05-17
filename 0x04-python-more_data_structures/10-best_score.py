@@ -14,6 +14,4 @@ def best_score(a_dictionary):
         if v > highest_value:
             highest_key = k
             highest_value = v
-            print("Updated: {}: {}".format(k, v))
-        print("Not updated: {}: {}".format(k, v))
     return (highest_key)
