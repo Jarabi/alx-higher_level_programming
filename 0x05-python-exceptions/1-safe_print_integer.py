@@ -6,7 +6,8 @@ def safe_print_integer(value):
         value: Value to be printed
     """
     try:
-        print("{:d}".format(value))
-        return (True)
+        if value:
+            print("{:d}".format(value))
+            return True
     except ValueError:
-        return (False)
+        return False
