@@ -5,3 +5,4 @@
 * 0x02. Python - import & modules
 * 0x03. Python - Data Structures: Lists, Tuples
 * 0x05. Python - Exceptions
+* 0x06. Python - Classes and Objects
