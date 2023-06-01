@@ -16,7 +16,11 @@ class Square:
 
     @property
     def size(self):
-        '''Retrieves private attribute - size'''
+        '''Retrieves private attribute - size
+
+        Returns:
+            size: The Square size
+        '''
         return self.__size
 
     @size.setter
@@ -25,6 +29,10 @@ class Square:
 
         Args:
             value (int): Positive integer to update size attribute
+
+        Raises:
+            ValueError: If `value` is negative
+            TypeError: If `value' is not an integer
         '''
         if isinstance(value, int):
             if value >= 0:
@@ -36,7 +44,11 @@ class Square:
 
     @property
     def position(self):
-        '''Retrieves attribute'''
+        '''Retrieves attribute
+
+        Returns:
+            position: Coordinate
+        '''
         return self.__position
 
     @position.setter
@@ -45,6 +57,12 @@ class Square:
 
         Args:
             value: Tuple of two positive numbers
+
+        Returns:
+            Nothing
+
+        Raises:
+            TypeError: If `value` is not a tuple  of two positive integers
         '''
         if isinstance(value, tuple) and len(value) == 2:
             if isinstance(value[0], int) and value[0] >= 0:
@@ -59,7 +77,7 @@ class Square:
         Returns:
             Current square area
         '''
-        return self.__size * self.__size
+        return (self.__size * self.__size)
 
     def my_print(self):
         '''Class method my_print
