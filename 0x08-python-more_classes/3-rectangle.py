@@ -103,4 +103,7 @@ class Rectangle:
             for col in range(self.__width):
                 rect += '#'
             rect += "\n"
+
+        rect = rect[:-1]
+
         return rect
