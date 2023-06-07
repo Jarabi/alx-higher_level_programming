@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 '''
-0-add_integer module
-
 This module supplies one function: add_integer(a, b). Example usage:
     >>> add_integer(10, 5)
     15
