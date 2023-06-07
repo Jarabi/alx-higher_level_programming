@@ -9,11 +9,10 @@ This is a doctest file to test the ``add_integer`` function
 Import function ``add_integer`` from the ``0-add_integer`` module:
 >>> add_integer = __import__('0-add_integer').add_integer
 
-Test return value type with floating point value
+Test return type
 >>> type(add_integer(4.3, 2))
 <class 'int'>
 
-Test return value type with floating point value
 >>> type(add_integer(100, 2.1))
 <class 'int'>
 
@@ -24,6 +23,12 @@ Test with positive integers
 Test with negative integer
 >>> add_integer(100, -2)
 98
+
+>>> add_integer(-2, -3)
+-5
+
+>>> add_integer(-4.2, -1)
+-5
 
 Test with only one integer supplied
 >>> add_integer(2)
