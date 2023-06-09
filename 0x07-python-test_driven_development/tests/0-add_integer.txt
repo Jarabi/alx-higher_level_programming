@@ -74,3 +74,9 @@ Check for float overflow:
 	Traceback (most recent call last):
 		...
 	OverflowError: cannot convert float infinity to integer
+
+Check fo addition with NaN:
+	>>> add_integer(NaN, 1)
+	Traceback (most recent call last):
+		...
+	NameError: name 'NaN' is not defined
