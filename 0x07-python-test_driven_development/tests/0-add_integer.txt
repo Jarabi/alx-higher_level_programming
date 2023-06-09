@@ -1,8 +1,14 @@
 Test for 0-add_integer module
 =============================
 
+Import checks
+-------------
+
 Import the function:
 	>>> add_integer = __import__('0-add_integer').add_integer
+
+Documentation chacks
+--------------------
 
 Check for module documentation:
 	>>> mod_doc = __import__('0-add_integer').__doc__
@@ -13,6 +19,9 @@ Check for function documentation:
 	>>> func_doc = __import__('0-add_integer').add_integer.__doc__
 	>>> len(func_doc) > 1
 	True
+
+Value checks
+------------
 
 Check for addition of integer and float:
 	>>> add_integer(4.3, 2)
@@ -45,6 +54,9 @@ Test with one float value:
 	>>> add_integer(100.3, -2)
 	98
 
+Traceback checks
+----------------
+
 Check for addition of integer and string value:
 	>>> add_integer(4, "School")
 	Traceback (most recent call last):
@@ -56,3 +68,9 @@ Test with value 'None':
 	Traceback (most recent call last):
 		...
 	TypeError: a must be an integer
+
+Check for float overflow:
+	>>> add_integer(1.8e308)
+	Traceback (most recent call last):
+		...
+	OverflowError: cannot convert float infinity to integer
