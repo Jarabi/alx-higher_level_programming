@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-This module supplies one function: add_integer(a, b). Example usage:
+Addition of two integers: add_integer(a, b). Example usage:
     >>> add_integer(10, 5)
     15
 '''
