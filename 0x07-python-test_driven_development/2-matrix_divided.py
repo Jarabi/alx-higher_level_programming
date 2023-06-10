@@ -5,7 +5,7 @@ Divide elements of a matrix by a number. Usage:
     matrix_divided(matrix, div)
 Example:
     >>> matrix_divided([[1, 2, 3], [4, 5, 6]])
-    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]] 
+    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 '''
 
 
@@ -27,7 +27,7 @@ def matrix_divided(matrix, div):
 
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
-    
+
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
