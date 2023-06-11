@@ -1,0 +1,47 @@
+Test for 3-say_my_name module
+=============================
+
+Import checks
+-------------
+
+Import the function:
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Documentation checks
+--------------------
+
+Check for module documentation:
+	>>> mod_doc = __import__('3-say_my_name').__doc__
+	>>> len(mod_doc) > 1
+	True
+
+Check for function documentation:
+	>>> func_doc = __import__('3-say_my_name').say_my_name.__doc__
+	>>> len(func_doc) > 1
+	True
+
+Test case - both parameters are strings:
+	>>> say_my_name("Alex", "Jarabi")
+	My name is Alex Jarabi
+
+Test case - only one string parameter provided:
+        >>> say_my_name("Alex")
+        My name is Alex 
+
+Test case - first_name not string, last_name string:
+	>>> say_my_name(27, "Jarabi")
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+Test case - first_name is  string, last_name not string:
+        >>> say_my_name("Alex", 34)
+        Traceback (most recent call last):
+                ...
+        TypeError: last_name must be a string
+
+Test case - missing two arguments:
+        >>> say_my_name()
+        Traceback (most recent call last):
+                ...
+        TypeError: say_my_name() missing 1 required positional argument: 'first_name'
