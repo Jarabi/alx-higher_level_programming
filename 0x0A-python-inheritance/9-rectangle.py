@@ -27,12 +27,21 @@ class Rectangle(BaseGeometry):
     def print(self):
         '''Prints rectangle description'''
 
-        print("[Rectangle] {}/{}".format(self.__width, self.__height))
+        print("[{}] {}/{}".format(
+            type(self).__name__,
+            self.__width,
+            self.__height
+            )
+        )
 
     def __str__(self):
         '''Returns rectangle description'''
 
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        return "[{}] {}/{}".format(
+                type(self).__name__,
+                self.__width,
+                self.__height
+        )
 
     def area(self):
         '''Returns the area of rectangle'''
