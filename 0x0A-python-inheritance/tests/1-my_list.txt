@@ -1,0 +1,61 @@
+Test for module 1-my_list
+========================
+
+Import module:
+	>>> MyList = __import__('1-my_list').MyList
+
+Module documentation:
+	>>> mod_doc = __import__('1-my_list').__doc__
+	>>> len(mod_doc) > 1
+	True
+
+Class documentation:
+	>>> class_doc = __import__("1-my_list").MyList.__doc__
+	>>> len(class_doc) > 1
+	True
+
+Method documentation:
+	>>> meth_doc = __import__("1-my_list").MyList.print_sorted.__doc__
+	>>> len(meth_doc) > 1
+	True
+
+Test case - empty list:
+	>>> lst1 = MyList()
+	>>> print(lst1)
+	[]
+
+Test case - single element list:
+	>>> lst2 = MyList()
+	>>> lst2.append(5)
+	>>> print(lst2)
+	[5]
+	>>> lst2.print_sorted()
+	[5]
+
+Test case - list with elements with equal value:
+	>>> lst3 = MyList()
+	>>> lst3.append(9)
+	>>> lst3.append(9)
+	>>> lst3.append(9)
+	>>> print(lst3)
+	[9, 9, 9]
+	>>> lst3.print_sorted()
+	[9, 9, 9]
+
+Test case - list sorting:
+	>>> lst4 = MyList()
+	>>> lst4.append(3)
+	>>> lst4.append(27)
+	>>> lst4.append(13)
+	>>> lst4.append(-4)
+	>>> lst4.append(-11)
+	>>> print(lst4)
+	[3, 27, 13, -4, -11]
+	>>> lst4.print_sorted()
+	[-11, -4, 3, 13, 27]
+
+Test case - original list not modified:
+	>>> print(lst4)
+	[3, 27, 13, -4, -11]
+
+Test case - 
