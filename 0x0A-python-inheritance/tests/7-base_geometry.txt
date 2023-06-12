@@ -1,0 +1,48 @@
+Test for module 7-base_geometry
+===============================
+
+Import module:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Module documentation:
+	>>> mod_doc = __import__('7-base_geometry').__doc__
+	>>> len(mod_doc) > 1
+	True
+
+Class documentation:
+	>>> class_doc = __import__("7-base_geometry").BaseGeometry.__doc__
+	>>> len(class_doc) > 1
+	True
+
+Method documentation:
+	>>> meth_doc = __import__("7-base_geometry").BaseGeometry.area.__doc__
+	>>> len(meth_doc) > 1
+	True
+
+Method documentation:
+        >>> meth_doc = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+        >>> len(meth_doc) > 1
+        True
+
+Test case - value is integer:
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("width", 89)
+	
+
+Test case - value is a string:
+	>>> bg.integer_validator("name", "Alex")
+	Traceback (most recent call last):
+		...
+    	TypeError: name must be an integer
+
+Test case - value is 0:
+	>>> bg.integer_validator("age", 0)
+	Traceback (most recent call last):
+		...
+    	ValueError: age must be greater than 0
+
+Test case - value is less than 0:
+	>>> bg.integer_validator("area", -24)
+	Traceback (most recent call last):
+                ...
+        ValueError: area must be greater than 0
