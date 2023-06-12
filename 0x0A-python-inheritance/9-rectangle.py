@@ -24,16 +24,6 @@ class Rectangle(BaseGeometry):
         self.__width = width
         self.__height = height
 
-    def print(self):
-        '''Prints rectangle description'''
-
-        print("[{}] {}/{}".format(
-            type(self).__name__,
-            self.__width,
-            self.__height
-            )
-        )
-
     def __str__(self):
         '''Returns rectangle description'''
 
