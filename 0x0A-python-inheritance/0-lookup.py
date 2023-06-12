@@ -15,7 +15,4 @@ def lookup(obj):
     Returns:
         List object of the attributes and methods
     '''
-    new_list = []
-    new_list.append(dir(obj))
-
-    return (new_list)
+    return (dir(obj))
