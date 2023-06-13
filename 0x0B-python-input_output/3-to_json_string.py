@@ -14,4 +14,5 @@ def to_json_string(my_obj):
     Returns:
         Serialized string
     '''
-    return (json.dumps(my_obj))
+    serialized = json.dumps(my_obj, sort_keys=True)
+    return (serialized)
