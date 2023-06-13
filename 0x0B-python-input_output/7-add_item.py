@@ -12,15 +12,15 @@ def add_args(args):
         A script that adds all arguments to a Python list
         and saves them to a file
     '''
-    my_list = []
     filename = "add_item.json"
 
-    if len(args) > 0:
-        # Get list saved in json file
+    try:
         my_list = load_from_json_file(filename)
+    except FileNotFoundError:
+        my_list = []
 
-        # Update my_list
-        my_list.extend(args)
+    # Update my_list
+    my_list.extend(args)
 
     # Save new list structure to json file
     save_to_json_file(my_list, filename)
