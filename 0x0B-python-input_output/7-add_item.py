@@ -3,20 +3,29 @@
     Adds arguments to a Python list, then save them to a file.
 '''
 import sys
-import json
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-my_list = []
-filename = "add_item.json"
-args = sys.argv[1:]
 
-if len(args) > 0:
-    # Get list from json file
-    my_list = load_from_json_file(filename)
+def add_args(args):
+    '''
+        A script that adds all arguments to a Python list
+        and saves them to a file
+    '''
+    my_list = []
+    filename = "add_item.json"
 
-    # Update my_list
-    my_list.extend(args)
+    if len(args) > 0:
+        # Get list saved in json file
+        my_list = load_from_json_file(filename)
 
-# Save new list structure to json file
-save_to_json_file(my_list, filename)
+        # Update my_list
+        my_list.extend(args)
+
+    # Save new list structure to json file
+    save_to_json_file(my_list, filename)
+
+
+if __name__ == "__main__":
+    args = sys.argv[1:]
+    add_args(args)
