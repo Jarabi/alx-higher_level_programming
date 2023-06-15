@@ -47,7 +47,7 @@ The Zen of Python, by Tim Peters
 
 ### The Python interpreter:
 Putting /usr/local/bin in your Unix shell’s search path makes it possible to start it by typing the command:
-`$ python3.11`
+`$ python3`
 
 Typing the end-of-line character (CTRL-D) at the primary prompt causes the interpretter to exit with a zero status.
 Alternatively, you can use command `quit()`
@@ -57,7 +57,7 @@ A second way to start the interpretter is `python -c command [arg] ...` which ex
 ### Printing text and variables using **print**
 Python three alternatives to print text and variables:
 
-#### Option #1: %-formatting
+#### %-formatting
 String objects have a built-in operation using the `%` operator, which you can use to format strings. Here’s what that looks like in practice:
 ```
 >>> name = "Alex"
@@ -73,7 +73,7 @@ In order to insert more than one variable, you must use a tuple of those variabl
 ```
 With %-formatting, however, once you start using several parameters and longer strings, your code will quickly become much less easily readable.
 
-#### Option #2: str.format()
+#### str.format()
 Introduced in Python 2.6, str.format()  is an improvement on %-formatting. With str.format(), the replacement fields are marked by curly braces:
 ```
 >>> print("Hello, {}. You are {}.".format(name, age))
