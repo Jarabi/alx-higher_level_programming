@@ -18,7 +18,7 @@ class Base:
             id: public instance attribute
         '''
         if id is not None:
-                self.id = id
+            self.id = id
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
