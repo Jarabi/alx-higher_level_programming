@@ -104,3 +104,13 @@ class Rectangle(Base):
             for col in range(self.__width):
                 print('#', end="")
             print()
+
+    def __str__(self):
+        '''
+        Override the __str__ method to return string representation
+        of rectangle attributes
+        '''
+        class_name = self.__class__.__name__
+        w = self.__width
+        h = self.__height
+        return f"[{class_name}] ({self.id}) {self.__x}/{self.__y} - {w}/{h}"
