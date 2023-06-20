@@ -115,3 +115,21 @@ class Rectangle(Base):
         w = self.__width
         h = self.__height
         return f"[{class_name}] ({self.id}) {self.__x}/{self.__y} - {w}/{h}"
+
+    def update(self, *args, **kwargs):
+        '''
+        Updates class attributes
+        '''
+        if len(args) == 0:
+            for key in val in kwargs.items():
+                self.__setattr__(key, val)
+            return
+
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass
