@@ -120,6 +120,10 @@ class Rectangle(Base):
         '''
         Updates class attributes
         '''
+        if len(args) == 0:
+            for key, val in kwargs.items():
+                self.__setattr__(key, val)
+            return
         try:
             self.id = args[0]
             self.width = args[1]
