@@ -34,3 +34,19 @@ class Square(Rectangle):
         '''
         cls_name = self.__class__.__name__
         return f"[{cls_name}] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    def update(self, *args, **kwargs):
+        '''
+        Public method to update attributes
+        '''
+        if len(args) == 0:
+            for key, val in kwargs.items():
+                self.__setattr__(key, val)
+            return
+        try:
+            self.id = args[0]
+            self.size = args[1]
+            self.x = args[2]
+            self.y = args[3]
+        except IndexError:
+            pass
