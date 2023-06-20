@@ -100,10 +100,11 @@ class Rectangle(Base):
         '''
         Print rectangle representation using # character
         '''
-        for row in range(self.__height):
-            for col in range(self.__width):
-                print('#', end="")
-            print()
+        rect = ""
+        print("\n" * self.y, end="")
+        for _ in range(self.__height):
+            rect += (" " * self.x) + ("#" * self.width) + "\n"
+        print(rect, end="")
 
     def __str__(self):
         '''
