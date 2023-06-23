@@ -3,6 +3,7 @@
     Base class
 '''
 import json
+import os
 
 
 class Base:
@@ -74,3 +75,24 @@ class Base:
 
         polygon.update(**dictionary)
         return (polygon)
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances
+        """
+        instances = []
+        filename = cls.__name__ + ".json"
+
+        try:
+            with open(filename, encoding="utf-8") as f:
+                data = f.read()
+
+            json_string = cls.from_json_string(data)
+        except IOError:
+            return []
+
+        for instance in json_string:
+            instances.append(cls.create(**instance))
+
+        return instances
