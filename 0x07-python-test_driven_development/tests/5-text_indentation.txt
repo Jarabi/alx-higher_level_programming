@@ -1,0 +1,52 @@
+Test for 5-text_indentation module
+==================================
+
+Import checks
+-------------
+
+Import the function:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Documentation checks
+--------------------
+
+Check for module documentation:
+	>>> mod_doc = __import__('5-text_indentation').__doc__
+	>>> len(mod_doc) > 1
+	True
+
+Check for function documentation:
+	>>> func_doc = __import__('5-text_indentation').text_indentation.__doc__
+	>>> len(func_doc) > 1
+	True
+
+Test case - single line without delimiter:
+	>>> text_indentation("My name is Alex")
+	My name is Alex
+
+Test case - single line with delimiter:
+	>>> text_indentation("one.two")
+	one.
+	<BLANKLINE>
+	two
+
+Test case - Line with multiple delimiters:
+	>>> text_indentation("Period. Question? Colon:")
+	Period.
+	<BLANKLINE>
+	Question?
+	<BLANKLINE>
+	Colon:
+	<BLANKLINE>
+
+Test case - non-string argument:
+	>>> text_indentation(12)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string
+
+Test case - no argument supplied:
+	>>> text_indentation()
+	Traceback (most recent call last):
+		...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
