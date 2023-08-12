@@ -24,18 +24,15 @@ def text_indentation(text):
         raise TypeError("text must be a string")
 
     delims = {'.', ':', '?'}
-    indented_text = ""
     is_delim = False
 
     for char in text:
-        if is_delim:
-            if char.isspace():
-                char = ''
-            is_delim = False
-
+        if is_delim and char == ' ':
+            continue
         if char in delims:
-            char += "\n\n"
+            print(f"{char}")
+            print()
             is_delim = True
-
-        indented_text += char
-    print(indented_text, end='')
+        else:
+            print(f"{char}", end="")
+            is_delim = False
