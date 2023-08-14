@@ -24,7 +24,7 @@
 ### 0. First constant, first print
 | Script | Description |
 |--------|-------------|
-| 0-javascript\_is\_amazing.js | Prints "JavaScript is amazing" |
+| [0-javascript\_is\_amazing.js](https://github.com/Jarabi/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/0-javascript_is_amazing.js) | Prints "JavaScript is amazing" |
 
 Usage:
 
