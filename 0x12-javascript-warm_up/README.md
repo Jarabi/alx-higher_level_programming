@@ -21,12 +21,18 @@
 
 ## Scripts
 
-### 0. First constant, first print
-| Script | Description |
-|--------|-------------|
+| Name | Description |
+|------|-------------|
 | [0-javascript\_is\_amazing.js](https://github.com/Jarabi/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/0-javascript_is_amazing.js) | Prints "JavaScript is amazing" |
+| [1-multi\_languages.js](https://github.com/Jarabi/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/1-multi_languages.js) | Prints 3 lines |
+| [2-arguments.js](https://github.com/Jarabi/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/2-arguments.js) | Prints a message depending of the number of arguments passed. |
+| [3-value\_argument.js](https://github.com/Jarabi/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/3-value_argument.js) | Prints the first argument passed to it. |
+| [4-concat.js](https://github.com/Jarabi/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/4-concat.js) | Prints two arguments passed to it, in the following format: “ is ” |
+| [5-to\_integer.js](https://github.com/Jarabi/alx-higher_level_programming/blob/main/0x12-javascript-warm_up/5-to_integer.js) | Prints My number: \<first argument converted in integer\> if the first argument can be converted to an integer. |
 
-Usage:
+## Usage:
+
+0-javascript\_is\_amazing.js
 
 ```javascript
 0x12$ ./0-javascript_is_amazing.js 
@@ -34,7 +40,59 @@ JavaScript is amazing
 0x12$ 
 0x12$ semistandard ./0-javascript_is_amazing.js 
 0x12$ 
-``` 
-| 1-multi\_languages.js | Prints 3 lines using console.log | `./1-multi_languages.js` |
-| 2-arguments.js | Prints a message depending of the number of arguments passed. | `./2-arguments.js [arguments]` |
-| 3-value\_argument.js | Prints the first argument passed to it. | 
+```
+---
+1-multi\_languages.js
+```javascript
+0x12$ ./1-multi_languages.js 
+C is fun
+Python is cool
+JavaScript is amazing
+0x12$ 
+```
+---
+2-arguments.js
+```javascript
+0x12$ ./2-arguments.js 
+No argument
+0x12$ ./2-arguments.js Best
+Argument found
+0x12$ ./2-arguments.js Best School
+Arguments found
+0x12$
+```
+---
+3-value\_argument.js
+```javascript
+0x12$ ./3-value_argument.js 
+No argument
+0x12$ ./3-value_argument.js School
+School
+0x12$ 
+```
+---
+4-concat.js
+```javascript
+0x12$ ./4-concat.js c cool
+c is cool
+0x12$ ./4-concat.js c 
+c is undefined
+0x12$ ./4-concat.js
+undefined is undefined
+0x12$ 
+```
+---
+5-to\_integer.js
+```javascript
+0x12$ ./5-to_integer.js 
+Not a number
+0x12$ ./5-to_integer.js 89
+My number: 89
+0x12$ ./5-to_integer.js "89"
+My number: 89
+0x12$ ./5-to_integer.js 89.89
+My number: 89
+0x12$ ./5-to_integer.js School
+Not a number
+0x12$ 
+```
