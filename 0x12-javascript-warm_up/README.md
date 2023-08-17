@@ -51,7 +51,7 @@ Prints `JavaScript is amazing`:
 JavaScript is amazing
 0x12$ 
 0x12$ semistandard ./0-javascript_is_amazing.js 
-0x12$ 
+0x12$
 ```
 ### 1-multi\_languages.js
 Prints 3 lines:
@@ -63,7 +63,7 @@ Prints 3 lines:
 C is fun
 Python is cool
 JavaScript is amazing
-0x12$ 
+0x12$
 ```
 ### 2-arguments.js
 Prints a message depending of the number of arguments passed:
@@ -87,10 +87,10 @@ Prints the first argument passed to it:
 No argument
 0x12$ ./3-value_argument.js School
 School
-0x12$ 
+0x12$
 ```
 ### 4-concat.js
-Prints two arguments passed to it, in the following format: ` is `
+Prints two arguments passed to it, in the following format: `<first> is <second>`
 ```javascript
 0x12$ ./4-concat.js c cool
 c is cool
@@ -98,10 +98,10 @@ c is cool
 c is undefined
 0x12$ ./4-concat.js
 undefined is undefined
-0x12$ 
+0x12$
 ```
 ### 5-to\_integer.js
-Write a script that prints My number: `<first argument converted in integer>` if the first argument can be converted to an integer:
+Prints `My number: <first argument converted to integer>` if the first argument can be converted to an integer:
 - If the argument can’t be converted to an integer, print `Not a number`
 ```javascript
 0x12$ ./5-to_integer.js 
@@ -114,5 +114,189 @@ My number: 89
 My number: 89
 0x12$ ./5-to_integer.js School
 Not a number
+0x12$
+```
+### 6-multi\_languages\_loop.js
+Prints 3 lines: (like 1-multi\_languages.js) but by using an array of string and a loop
+- The first line: `C is fun`
+- The second line: `Python is cool`
+- The third line: `JavaScript is amazing`
+```javascript
+0x12$ ./6-multi_languages_loop.js 
+C is fun
+Python is cool
+JavaScript is amazing
+0x12$
+```
+### 7-multi\_c.js
+Prints x times `C is fun`:
+- where `x` is the first argument of the script
+- If the first argument can’t be converted to an integer, print `Missing number of occurrences`
+```javascript
+0x12$ ./7-multi\_c.js 2
+C is fun
+C is fun
+0x12$ ./7-multi\_c.js 5
+C is fun
+C is fun
+C is fun
+C is fun
+C is fun
+0x12$ ./7-multi\_c.js 
+Missing number of occurrences
+0x12$ ./7-multi\_c.js -3
+0x12$
+```
+### 8-square.js
+Prints a square:
+- The first argument is the size of the square
+- If the first argument can’t be converted to an integer, print `Missing size`
+- You must use the character `X` to print the square
+```javascript
+0x12$ ./8-square.js
+Missing size
+0x12$ ./8-square.js School
+Missing size
+0x12$ ./8-square.js 2
+XX
+XX
+0x12$ ./8-square.js 6
+XXXXXX
+XXXXXX
+XXXXXX
+XXXXXX
+XXXXXX
+XXXXXX
+0x12$ ./8-square.js -3
 0x12$ 
 ```
+### 9-add.js
+Prints the addition of 2 integers
+- The first argument is the first integer
+- The second argument is the second integer
+```javascript
+0x12$ ./9-add.js 
+NaN
+0x12$ ./9-add.js 1
+NaN
+0x12$ ./9-add.js 1 7
+8
+0x12$ ./9-add.js 13 89
+102
+0x12$
+```
+### 10-factorial.js
+Computes and prints a factorial:
+- The first argument is integer (argument can be cast as integer) used for computing the factorial
+- Factorial of `NaN` is 1
+```javascript
+0x12$ ./10-factorial.js 
+1
+0x12$ ./10-factorial.js 3
+6
+0x12$ ./10-factorial.js 89
+1.6507955160908452e+136
+0x12$ ./10-factorial.js 333
+Infinity
+0x12$ 
+```
+### 11-second\_biggest.js
+Searches the second biggest integer in the list of arguments.
+- If no argument passed, print 0
+- If the number of arguments is 1, print 0
+```javascript
+0x12$ ./11-second_biggest.js 
+0
+0x12$ ./11-second_biggest.js 1
+0
+0x12$ ./11-second_biggest.js 4 2 5 3 0 -3
+4
+0x12$
+```
+### 12-object.js
+Replaces the value 12 with 89
+```javascript
+0x12$ ./12-object.js
+{ type: 'object', value: 12 }
+{ type: 'object', value: 89 }
+0x12$
+```
+### 13-add.js
+Returns the addition of 2 integers
+```javascript
+0x12$ cat 13-main.js
+#!/usr/bin/node
+const add = require('./13-add').add;
+console.log(add(3, 5));
+0x12$ ./13-main.js
+8
+0x12$
+```
+### 100-let\_me\_const.js
+Modifies the value of `myVar` to 333
+```javascript
+0x12$ cat 100-main.js
+#!/usr/bin/node
+myVar = 89;
+require('./100-let_me_const')
+console.log(myVar);
+0x12$ ./100-main.js
+333
+0x12$
+```
+### 101-call\_me\_moby.js
+Executes `x` times a function
+```javascript
+0x12$ cat 101-main.js
+#!/usr/bin/node
+const callMeMoby = require('./101-call_me_moby').callMeMoby;
+callMeMoby(3, function () {
+  console.log('C is fun');
+});
+0x12$ ./101-main.js
+C is fun
+C is fun
+C is fun
+0x12$
+```
+### 102-add\_me\_maybe.js
+Increments and calls a function
+```javascript
+0x12$ cat 102-main.js
+#!/usr/bin/node
+const addMeMaybe = require('./102-add_me_maybe').addMeMaybe;
+addMeMaybe(4, function (nb) {
+  console.log('New value: ' + nb);
+});
+0x12$ ./102-main.js
+New value: 5
+0x12$
+```
+### 103-object\_fct.js
+Adds a new function `incr` that increments the integer `value`
+```javascript
+0x12$ cat 103-object_fct.js
+#!/usr/bin/node
+const myObject = {
+  type: 'object',
+  value: 12
+};
+console.log(myObject);
+/*
+YOUR CODE HERE
+*/
+myObject.incr();
+console.log(myObject);
+myObject.incr();
+console.log(myObject);
+myObject.incr();
+console.log(myObject);
+
+0x12$ ./103-object_fct.js 
+{ type: 'object', value: 12 }
+{ type: 'object', value: 13, incr: [Function] }
+{ type: 'object', value: 14, incr: [Function] }
+{ type: 'object', value: 15, incr: [Function] }
+0x12$
+```
+&copy; Alex Jarabi &middot; 2023
