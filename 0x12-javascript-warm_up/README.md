@@ -44,8 +44,8 @@
 
 ## Usage:
 
-0-javascript\_is\_amazing.js
-
+### 0-javascript\_is\_amazing.js
+Prints `JavaScript is amazing`:
 ```javascript
 0x12$ ./0-javascript_is_amazing.js 
 JavaScript is amazing
@@ -53,8 +53,11 @@ JavaScript is amazing
 0x12$ semistandard ./0-javascript_is_amazing.js 
 0x12$ 
 ```
----
-1-multi\_languages.js
+### 1-multi\_languages.js
+Prints 3 lines:
+- The first line: `C is fun`
+- The second line: `Python is cool`
+- The third line: `JavaScript is amazing`
 ```javascript
 0x12$ ./1-multi_languages.js 
 C is fun
@@ -62,8 +65,11 @@ Python is cool
 JavaScript is amazing
 0x12$ 
 ```
----
-2-arguments.js
+### 2-arguments.js
+Prints a message depending of the number of arguments passed:
+- If no arguments are passed to the script, print `No argument`
+- If only one argument is passed to the script, print `Argument found`
+- Otherwise, print `Arguments found`
 ```javascript
 0x12$ ./2-arguments.js 
 No argument
@@ -73,8 +79,9 @@ Argument found
 Arguments found
 0x12$
 ```
----
-3-value\_argument.js
+### 3-value\_argument.js
+Prints the first argument passed to it:
+- If no arguments are passed to the script, print `No argument`
 ```javascript
 0x12$ ./3-value_argument.js 
 No argument
@@ -82,8 +89,8 @@ No argument
 School
 0x12$ 
 ```
----
-4-concat.js
+### 4-concat.js
+Prints two arguments passed to it, in the following format: ` is `
 ```javascript
 0x12$ ./4-concat.js c cool
 c is cool
@@ -93,8 +100,9 @@ c is undefined
 undefined is undefined
 0x12$ 
 ```
----
-5-to\_integer.js
+### 5-to\_integer.js
+Write a script that prints My number: `<first argument converted in integer>` if the first argument can be converted to an integer:
+- If the argument can’t be converted to an integer, print `Not a number`
 ```javascript
 0x12$ ./5-to_integer.js 
 Not a number
