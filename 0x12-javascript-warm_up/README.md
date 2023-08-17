@@ -62,21 +62,340 @@ const maxUsers = 100;
 maxUsers = 150; // This will result in an error
 ```
 It's important to note that the choice between using `let` and `const` depends on whether the value of the variable will change over time. If the value needs to remain constant, use `const`. If the value might change, use `let`.
+### JavaScript Datatypes
+Here are the main data types available in JavaScript:
+#### Primitive Data Types:
+- __Number__: Represents both integer and floating-point numbers.
+- __String__: Represents sequences of characters, such as text.
+- __Boolean__: Represents true or false values.
+- __Undefined__: Represents a variable that has been declared but hasn't been assigned a value.
+- __Null__: Represents the intentional absence of any value.
+- __Symbol__: Represents a unique and immutable value, often used as object property keys.
+- __BigInt__: Represents integers of arbitrary precision (introduced in ECMAScript 2020).
+#### Complex Data Types:
+- __Object__: Represents a collection of key-value pairs. Objects can hold various types of data and functions. This includes built-in objects like arrays, functions, and dates, as well as custom objects.
+- __Array__: Represents an ordered list of values, which can be of any data type.
+- __Function__: Represents executable code and can be defined using function expressions or function declarations.
+- __Date__: Represents dates and times.
+- __RegExp__: Represents regular expressions, used for pattern matching within strings.
 
+JavaScript is dynamically typed, meaning you don't need to explicitly specify a data type when declaring a variable. The data type is determined automatically based on the value assigned to the variable. Additionally, JavaScript has a feature called type coercion, where values can be automatically converted from one type to another in certain contexts.
 
-4.  What are differences between `var`, `const` and `let`
-5.  What are all the data types available in JavaScript
-6.  How to use the `if`, `if ... else` statements
-7.  How to use comments
-8.  How to affect values to variables
-9.  How to use `while` and `for` loops
-10. How to use `break` and `continue` statements
-11. What is a function and how do you use functions
-12. What does a function that does not use any `return` statement return
-13. Scope of variables
-14. What are the arithmetic operators and how to use them
-15. How to manipulate dictionary
-16. How to import a file
+Examples:
+```javascript
+// Primitive data types
+let age = 30;                // Number
+let name = "Alice";          // String
+let isStudent = true;        // Boolean
+let notDefined;              // Undefined
+let noValue = null;          // Null
+let uniqueSymbol = Symbol(); // Symbol
+
+// Complex data types
+let person = {              // Object
+    firstName: "John",
+    lastName: "Doe"
+};
+
+let numbers = [1, 2, 3];    // Array
+
+function greet() {          // Function
+    console.log("Hello!");
+}
+
+let today = new Date();     // Date
+
+let pattern = /abc/;        // RegExp
+```
+### `if`, `if ... else` statements
+In JavaScript, the if and if...else statements are used for conditional execution of code. They allow you to make decisions based on whether a given condition evaluates to `true` or `false`.  Examples:
+```javascript
+let age = 15;
+
+if (age >= 18) {
+    console.log("You are an adult.");
+} else {
+    console.log("You are not yet an adult.");
+}
+```
+### How to use comments
+In JavaScript, comments are used to add explanatory notes or annotations to your code. Comments are ignored by the JavaScript interpreter and are not executed as part of the program.
+#### Single-line Comments:
+Single-line comments are used to add comments to a single line of code. Anything after the comment indicator `//` on a line is treated as a comment and is not executed by the JavaScript interpreter.
+```javascript
+// This is a single-line comment
+let age = 25; // This comment explains the purpose of the variable
+```
+#### Multi-line Comments:
+Multi-line comments, also known as block comments, are used to write comments that span multiple lines. These comments are enclosed within `/*` and `*/`, and any text between them is treated as a comment.
+```javascript
+/*
+This is a multi-line comment.
+It can span multiple lines.
+*/
+
+let firstName = "John";
+/* This comment explains that the variable stores a person's first name */
+let lastName = "Doe";
+```
+Comments are a valuable tool for improving code readability and maintainability.
+### How to affect values to variables
+When assigning values to variables, you should keep in mind a few important points:
+1. __Initialization__: When declaring a variable, you can assign an initial value to it. For example, `let age = 30;`. This is called variable initialization.
+2. __Changing Values__: Variables can have their values changed after they have been assigned. For instance, `age = 31`; would update the value of the `age` variable to 31.
+3. __Data Types__: Variables can hold values of different data types, such as numbers, strings, boolean values, and more. Make sure the value you assign matches the intended data type.
+4. __Reassignment__: You can assign a new value to a variable that already holds a value. This will replace the old value with the new one.
+5. __Scope__: The scope of a variable determines where it can be accessed and modified. Variables declared with __let__ and __const__ are block-scoped, meaning they are limited to the block (usually enclosed by curly braces `{}`) in which they are defined.
+6. __Hoisting__: Variables declared with `var` are hoisted to the top of their scope during the compilation phase, which means you can use them before they are declared. However, it's considered a best practice to declare your variables before using them.
+### How to use `while` and `for` loops
+In JavaScript, loops are used to repeatedly execute a block of code until a certain condition is met. Two common types of loops are the `while` loop and the `for` loop.
+#### while Loop:
+The `while` loop continues executing a block of code as long as a specified condition is `true`. Example:
+```javascript
+let sum = 0;
+let num = 1;
+
+while (num <= 10) {
+    sum += num;
+    num++;
+}
+
+console.log(sum); // Output: 55 (1 + 2 + ... + 10)
+```
+#### for Loop:
+The `for` loop provides a more compact way to create loops, especially when you know the number of iterations beforehand. The `for` loop consists of three parts: initialization, condition, and iteration. Example:
+```javascript
+let sum = 0;
+
+for (let num = 1; num <= 10; num++) {
+    sum += num;
+}
+
+console.log(sum); // Output: 55
+```
+Both while and for loops are essential constructs in programming and can greatly enhance the efficiency and functionality of your code.
+### How to use `break` and `continue` statements
+In JavaScript, the `break` and `continue` statements are used within loops to control the flow of execution. They provide ways to terminate the current iteration of a loop (`continue`) or completely exit the loop (`break`).
+#### break Statement:
+The `break` statement is used to exit the current loop prematurely when a certain condition is met. When the `break` statement is encountered, the loop terminates immediately, and the program continues executing after the loop. Example:
+```javascript
+const numbers = [1, 3, 4, 5, 6, 7, 8, 9, 10];
+
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+        console.log("Found the first even number:", numbers[i]);
+        break; // Exit the loop
+    }
+}
+```
+#### continue Statement:
+The `continue` statement is used to skip the rest of the current iteration of a loop and move to the next iteration. This can be useful when you want to skip processing certain items in an array or other iterable. Example:
+```javascript
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 !== 0) {
+        continue; // Skip odd numbers and move to the next iteration
+    }
+    console.log("Even number:", numbers[i]);
+}
+```
+### Functions and how to use them
+A function in JavaScript is a reusable block of code that performs a specific task or set of tasks. Functions are used to modularize code, improve code organization, and promote reusability. They allow you to encapsulate a piece of functionality and call it whenever you need it. Functions can accept inputs (arguments) and produce outputs (return values). Example:
+```javascript
+// Function declaration
+function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+
+// Function call
+greet("Alice"); // Output: Hello, Alice!
+greet("Bob");   // Output: Hello, Bob!
+```
+You can also create functions that return values:
+```javascript
+function add(a, b) {
+    return a + b;
+}
+
+let result = add(5, 3);
+console.log(result); // Output: 8
+```
+__N.B__: A function that does not contain a `return` statement explicitly will return the value `undefined` by default. This means that when the function is called and executed, if no return statement is encountered, the function will still return the value `undefined` to the caller. Example:
+```javascript
+function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+
+let result = greet("Alice"); // Output: Hello, Alice!
+console.log(result); // Output: undefined
+```
+### Scope of variables
+In JavaScript, the scope of a variable defines where in your code that variable can be accessed or modified. The scope of a variable is determined by where it is declared, and it affects how that variable can be used within your program. There are two main types of scope in JavaScript: global scope and local scope.
+#### Global Scope:
+A variable declared outside of any function or code block has global scope. It can be accessed from anywhere in the code, both inside and outside functions.
+```javascript
+let globalVariable = 10;
+
+function myFunction() {
+    console.log(globalVariable); // Accessing global variable inside the function
+}
+
+console.log(globalVariable); // Accessing global variable outside the function
+```
+#### Local Scope:
+Variables declared inside a function or code block have local scope. They are accessible only within that function or block.
+```javascript
+function myFunction() {
+    let localVariable = 20; // Local variable
+    console.log(localVariable); // Accessing local variable inside the function
+}
+
+// console.log(localVariable); // This would result in an error, as localVariable is not accessible here
+```
+__Block Scope__:
+In modern JavaScript (ES6 and later), variables declared with `let` and `const` have block scope, which means they are limited to the block (portion of code enclosed by curly braces {}) in which they are declared.
+```javascript
+if (true) {
+    let blockScopedVariable = 30;
+    const anotherBlockScopedVariable = 40;
+}
+
+// console.log(blockScopedVariable); // This would result in an error
+// console.log(anotherBlockScopedVariable); // This would also result in an error
+```
+### Arithmetic operators and how to use them
+Arithmetic operators in JavaScript are used to perform mathematical calculations on numerical values. Here are the main arithmetic operators and how to use them:
+#### 1. Addition +:
+The addition operator is used to add two numbers together.
+```javascript
+let sum = 5 + 3; // Result: 8
+```
+#### 2. Subtraction -:
+The subtraction operator is used to subtract one number from another.
+```javascript
+let difference = 10 - 4; // Result: 6
+```
+#### 3. Multiplication *:
+The multiplication operator is used to multiply two numbers.
+```javascript
+let product = 3 * 6; // Result: 18
+```
+#### 4. Division /:
+The division operator is used to divide one number by another.
+```javascript
+let quotient = 20 / 5; // Result: 4
+```
+#### 5. Modulus %:
+The modulus operator returns the remainder of a division operation.
+```javascript
+let remainder = 10 % 3; // Result: 1 (10 divided by 3 leaves a remainder of 1)
+```
+#### 6. Exponentiation ** (ES6):
+The exponentiation operator calculates the power of a number.
+### Manipulating dictionaries
+In JavaScript, dictionaries are known as objects. Objects are a fundamental data structure that allow you to store and organize data as key-value pairs.
+####  Creating an Object:
+You can create an object by using curly braces `{}` and specifying key-value pairs within the object.
+```javascript
+let person = {
+    firstName: "John",
+    lastName: "Doe",
+    age: 30,
+    isStudent: false
+};
+```
+#### Accessing Values:
+You can access values in an object using dot notation or bracket notation.
+```javascript
+console.log(person.firstName); // Output: John
+console.log(person["lastName"]); // Output: Doe
+```
+#### Modifying Values:
+You can modify values in an object by assigning new values to the corresponding keys.
+```javascript
+person.age = 31;
+person["isStudent"] = true;
+```
+#### Adding New Key-Value Pairs:
+You can add new key-value pairs to an object by assigning a value to a new key.
+```javascript
+person.country = "USA";
+```
+#### Removing Key-Value Pairs:
+You can remove key-value pairs from an object using the `delete` keyword.
+```javascript
+delete person.isStudent;
+```
+#### Iterating Over Object Properties:
+You can loop through an object's properties using a `for...in` loop.
+```javascript
+for (let key in person) {
+    console.log(key + ": " + person[key]);
+}
+```
+#### Checking if a Key Exists:
+You can check if a specific key exists in an object using the `hasOwnProperty()` method.
+```javascript
+if (person.hasOwnProperty("age")) {
+    console.log("Age exists in the object.");
+}
+```
+#### Object Methods and Functions:
+Objects can also have functions as values, which are known as methods. Methods can perform actions related to the object's data.
+```javascript
+let calculator = {
+    add: function(a, b) {
+        return a + b;
+    },
+    subtract: function(a, b) {
+        return a - b;
+    }
+};
+
+console.log(calculator.add(5, 3)); // Output: 8
+console.log(calculator.subtract(10, 5)); // Output: 5
+```
+### Importing files
+In JavaScript, there are different methods to import code from other files, depending on the context in which you're working. The method you use depends on the environment you're working in, such as browsers, Node.js, or modern ES6 modules.
+#### 1. Browser Environment:
+In the browser, you can use the HTML `<script>` tag to include external JavaScript files. Just provide the src attribute with the path to the file you want to import.
+```html
+<script src="path/to/your-script.js"></script>
+```
+The contents of `your-script.js` will be included and executed in the order specified.
+#### 2. Node.js Environment:
+In Node.js, you can use the `require()` function to import code from other files.
+Suppose you have a file named `utils.js`:
+```javascript
+// utils.js
+function sayHello() {
+    console.log("Hello from utils.js");
+}
+
+module.exports = {
+    sayHello: sayHello
+};
+```
+In another file, you can import the `sayHello` function:
+```javascript
+const utils = require('./utils');
+utils.sayHello(); // Output: Hello from utils.js
+```
+#### 3. ES6 Modules (Modern Approach):
+ES6 introduced a standardized module system for JavaScript. You can use the `import` and `export` keywords to work with modules.
+Suppose you have a file named `utils.js`:
+```javascript
+// utils.js
+export function sayHello() {
+    console.log("Hello from utils.js");
+}
+```
+In another file, you can import the `sayHello` function:
+```javascript
+import { sayHello } from './utils';
+sayHello(); // Output: Hello from utils.js
+```
 
 ## Scripts
 
