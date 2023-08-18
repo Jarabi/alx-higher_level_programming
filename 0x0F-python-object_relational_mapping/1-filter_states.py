@@ -12,7 +12,7 @@ if __name__ == "__main__":
     password = argv[2]
     db_name = argv[3]
 
-    conn = MySQLdb.connect(
+    connection = MySQLdb.connect(
             host="localhost",
             port=3306,
             user=username,
@@ -21,15 +21,16 @@ if __name__ == "__main__":
             charset="utf8"
     )
 
-    cur = conn.cursor()
-    cur.execute("SELECT *\
-        FROM states\
-        WHERE name LIKE %s\
-        ORDER BY id ASC", ('N%',))
+    cur = connection.cursor()
+
+    cur.execute("""
+        SELECT * FROM states
+        WHERE name LIKE 'N%'
+        ORDER BY id ASC""")
     query_rows = cur.fetchall()
 
     for row in query_rows:
         print(row)
 
     cur.close()
-    conn.close()
+    connection.close()
