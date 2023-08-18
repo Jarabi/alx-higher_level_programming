@@ -21,8 +21,10 @@ if __name__ == "__main__":
     )
 
     cur = connection.cursor()
+
+    # Use a binary comparison for case sensitivity
     query = """SELECT * FROM states
-        WHERE name LIKE 'N%'
+        WHERE name LIKE BINARY 'N%'
         ORDER BY id ASC"""
 
     cur.execute(query)
