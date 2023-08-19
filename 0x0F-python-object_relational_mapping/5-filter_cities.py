@@ -22,21 +22,22 @@ if __name__ == "__main__":
     )
 
     cursor = connection.cursor()
-    query = """SELECT c.name
-            FROM cities c
-            JOIN states s
-            ON c.state_id = s.id
-            WHERE s.name = %s
-            ORDER BY c.id"""
+    query = """SELECT name
+            FROM cities
+            WHERE cities.state_id = (
+                SELECT id
+                FROM states
+                WHERE states.name = %s
+            )
+            ORDER BY cities.id"""
 
     cursor.execute(query, (argument,))
     query_rows = cursor.fetchall()
 
     for index, row in enumerate(query_rows, start=1):
-        for item in row:
-            if index != 1:
-                print(" ", end="")
-            print(item, end="")
+        if index != 1:
+            print(", ", end="")
+        print(row[0], end="")
     print()
 
     cursor.close()
