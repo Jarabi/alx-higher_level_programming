@@ -31,9 +31,11 @@ if __name__ == "__main__":
     cursor.execute(query, (argument,))
     query_rows = cursor.fetchall()
 
-    for row in query_rows:
+    for index, row in enumerate(query_rows, start=1):
         for item in row:
-            print(item, end=" ")
+            if index != 1:
+                print(" ", end="")
+            print(item, end="")
     print()
 
     cursor.close()
