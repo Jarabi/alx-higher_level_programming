@@ -23,8 +23,7 @@ if __name__ == "__main__":
 
     cursor = connection.cursor()
     query = """SELECT id, name FROM cities
-            ORDER BY cities.id
-            """
+            ORDER BY cities.id ASC"""
 
     cursor.execute(query)
     query_rows = cursor.fetchall()
