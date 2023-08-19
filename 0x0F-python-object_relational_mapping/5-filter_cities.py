@@ -34,8 +34,8 @@ if __name__ == "__main__":
     cursor.execute(query, (argument,))
     query_rows = cursor.fetchall()
 
-    for index, row in enumerate(query_rows, start=1):
-        if index != 1:
+    for index, row in enumerate(query_rows):
+        if index:
             print(", ", end="")
         print(row[0], end="")
     print()
