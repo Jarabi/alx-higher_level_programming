@@ -22,11 +22,12 @@ if __name__ == "__main__":
     )
 
     cursor = connection.cursor()
-    query = """SELECT name FROM cities
-            WHERE cities.state_id = (
-                SELECT id FROM states
-                WHERE name = %s
-            ) ORDER BY cities.id ASC"""
+    query = """SELECT c.name
+            FROM cities c
+            JOIN states s
+            ON c.state_id = s.id
+            WHERE s.name = %s
+            ORDER BY c.id"""
 
     cursor.execute(query, (argument,))
     query_rows = cursor.fetchall()
