@@ -12,7 +12,7 @@ if __name__ == "__main__":
     username = argv[1]
     password = argv[2]
     db_name = argv[3]
-    name_to_search = f'%{argv[4]}%'
+    name_to_search = argv[4]
 
     DB_URI = f'mysql+mysqldb://{username}:{password}@localhost:3306/{db_name}'
     engine = create_engine(DB_URI, pool_pre_ping=True)
@@ -22,7 +22,8 @@ if __name__ == "__main__":
     session = Session()
 
     state = session.query(State)\
-        .filter(State.name.like(name_to_search))\
+        .filter(State.name == name_to_search)\
+        .order_by(State.id)\
         .first()
 
     if state is None:
