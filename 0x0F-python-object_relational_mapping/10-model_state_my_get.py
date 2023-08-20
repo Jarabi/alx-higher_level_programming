@@ -25,9 +25,9 @@ if __name__ == "__main__":
         .filter(State.name.like(name_to_search))\
         .first()
 
-    if state:
-        print(state.id)
-    else:
+    if state is None:
         print("Not found")
+    else:
+        print(state.id)
 
     session.close()
