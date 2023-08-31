@@ -4,11 +4,8 @@
 # Fetch url
 url="$1"
 
-# Store curl response
-response=$(curl -s "$url")
+# Stores size of response in bytes
+response_size=$(curl -sw "%{size_request}\n" "$url")
 
-# Get response length
-length="${#response}"
-
-# Output length
-echo "$length"
+# Output response size
+echo "$response_size"
