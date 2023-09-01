@@ -7,6 +7,7 @@ from sys import argv
 from urllib.request import Request, urlopen
 
 req = Request(argv[1])
+
 with urlopen(req) as res:
-    html = res.info()
-    print(html["X-Request-Id"])
+    header = res.getheader("X-Request-Id")
+    print(header)
