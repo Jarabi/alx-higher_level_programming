@@ -37,7 +37,7 @@ def find_peak(list_of_integers):
         index = 1
 
         while index < (list_len - 1):
-            if list_of_integers[index] > list_of_integers[index - 1] and \
+            if list_of_integers[index] > peak_value and \
                     list_of_integers[index] > list_of_integers[index + 1]:
                 peak_value = list_of_integers[index]
             index += 1
