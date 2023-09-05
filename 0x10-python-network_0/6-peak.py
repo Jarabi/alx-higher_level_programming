@@ -18,32 +18,23 @@ def find_peak(list_of_integers):
     if not isinstance(list_of_integers, list):
         return None
 
-    if not list_of_integers:
-        return None
-
-    peak_value = 0
     list_len = len(list_of_integers)
 
+    if not list_of_integers or list_len == 0:
+        return None
+
     if list_len == 1:
-        peak_value = list_of_integers[0]
+        return list_of_integers[0]
 
-    elif list_len == 2:
-        list_0 = list_of_integers[0]
-        list_1 = list_of_integers[1]
+    start = 0
+    end = list_len - 1
 
-        peak_value = list_0 if list_0 > list_1 else list_1
-    else:
-        peak_value = list_of_integers[0]
-        start = 1
-        end = list_len - 1
+    while start < end:
+        mid = (start + end) // 2
 
-        while start <= end:
-            if list_of_integers[start] > peak_value:
-                peak_value = list_of_integers[start]
+        if list_of_integers[mid] > list_of_integers[mid + 1]:
+            end = mid
+        else:
+            start = mid + 1
 
-            if list_of_integers[end] > peak_value:
-                peak_value = list_of_integers[end]
-            start += 1
-            end -= 1
-
-    return peak_value
+    return list_of_integers[start]
