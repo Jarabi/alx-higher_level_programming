@@ -34,12 +34,16 @@ def find_peak(list_of_integers):
         peak_value = list_0 if list_0 > list_1 else list_1
     else:
         peak_value = list_of_integers[0]
-        index = 1
+        start = 1
+        end = list_len - 1
 
-        while index < (list_len - 1):
-            if list_of_integers[index] > peak_value and \
-                    list_of_integers[index] > list_of_integers[index + 1]:
-                peak_value = list_of_integers[index]
-            index += 1
+        while start <= end:
+            if list_of_integers[start] > peak_value:
+                peak_value = list_of_integers[start]
+
+            if list_of_integers[end] > peak_value:
+                peak_value = list_of_integers[end]
+            start += 1
+            end -= 1
 
     return peak_value
