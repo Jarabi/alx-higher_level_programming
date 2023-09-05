@@ -3,21 +3,21 @@
 Takes in a letter and sends a POST request to http://0.0.0.0:5000/search_user
 with the letter as a parameter.
 """
-import requests
-from sys import argv
-
 
 if __name__ == "__main__":
+    from sys import argv
+    import requests
+
     query_term = ""
     url = "http://0.0.0.0:5000/search_user"
 
-    if len(argv >= 2):
+    if len(argv) >= 2:
         query_term = argv[1]
 
     query = {'q': query_term}
 
     try:
-        res = request.post(url, data=query)
+        res = requests.post(url, data=query)
         response = res.json()
 
         if len(response) == 0:
