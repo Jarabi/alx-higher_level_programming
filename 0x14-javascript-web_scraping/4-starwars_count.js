@@ -12,7 +12,7 @@ request.get(apiUrl, (err, res, body) => {
     const episodes = data.results;
 
     const wedgeAntillesEpisodes = episodes.filter((episode) => {
-      return episode.characters.includes(`${characterUrl}${characterId}`);
+      return episode.characters.includes(`${characterUrl}${characterId}/`);
     });
 
     console.log(wedgeAntillesEpisodes.length);
