@@ -2,6 +2,8 @@
 
 <kbd>Scripting</kbd> <kbd>API</kbd> <kbd>JavaScript</kbd>
 
+[![js-semistandard-style](https://raw.githubusercontent.com/standard/semistandard/master/badge.svg)](https://github.com/standard/semistandard)
+
 ## General
 
 * Why JavaScript programming is amazing?
