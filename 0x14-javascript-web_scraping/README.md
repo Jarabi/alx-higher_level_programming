@@ -13,15 +13,12 @@
 
 ## Tasks
 
-<table>
-<tr><th>Task</th><th>Description</th><th>Example</th></tr>
-<tr>
-<td>0. Readme</td>
-<td>Write a script that reads and prints the content of a file.
-<br>&middot; The first argument is the file path
-<br>&middot; The content of the file must be read in `utf-8`
-<br>&middot; If an error occurred during the reading, print the error object</td>
-<td>
+### 0. Readme
+
+A script that reads and prints the content of a file.
+* The first argument is the file path
+* The content of the file must be read in `utf-8`
+* If an error occurred during the reading, print the error object
 
 ```javascript
 0x14$ cat cisfun
@@ -39,16 +36,13 @@ C is super fun!
 0x14$
 ```
 
-</td>
-</tr>
-<tr>
-<td>1. Write me</td>
-<td>Write a script that writes a string to a file.
-<br>&middot; The first argument is the file path
-<br>&middot; The second argument is the string to write
-<br>&middot; The content of the file must be written in `utf-8`
-<br>&middot; If an error occurred during while writing, print the error object</td>
-<td>
+### 1. Write me
+
+A script that writes a string to a file.
+* The first argument is the file path
+* The second argument is the string to write
+* The content of the file must be written in `utf-8`
+* If an error occurred during while writing, print the error object
 
 ```javascript
 0x14$ ./1-writeme.js my_file.txt "Python is cool"
@@ -57,15 +51,11 @@ Python is cool
 0x14$ 
 ```
 
-</td>
-</tr>
-<tr>
-<td>2. Status code</td>
-<td>Write a script that display the status code of a `GET` request.
-<br>&middot;The first argument is the URL to request (`GET`)
-<br>The status code must be printed like this: `code: <status code>`
-<br>You must use the module `request`</td>
-<td>
+### 2. Status code
+A script that display the status code of a `GET` request.
+* The first argument is the URL to request (`GET`)
+* The status code must be printed like this: `code: <status code>`
+* You must use the module `request`
 
 ```javascript
 0x14$ ./2-statuscode.js https://alx-intranet.hbtn.io/status
@@ -74,7 +64,3 @@ code: 200
 code: 404
 0x14$
 ```
-
-</td>
-</tr>
-</table>
