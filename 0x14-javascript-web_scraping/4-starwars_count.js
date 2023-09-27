@@ -2,7 +2,6 @@
 const request = require('request');
 const apiUrl = process.argv[2];
 const characterId = 18;
-const characterUrl = 'https://swapi-api.alx-tools.com/api/people/';
 
 request.get(apiUrl, (err, res, body) => {
   if (err) {
@@ -11,10 +10,20 @@ request.get(apiUrl, (err, res, body) => {
     const data = JSON.parse(body);
     const episodes = data.results;
 
-    const wedgeAntillesEpisodes = episodes.filter((episode) => {
-      return episode.characters.includes(`${characterUrl}${characterId}/`);
+    const characterList = episodes.map((episode) => {
+      return episode.characters;
     });
 
-    console.log(wedgeAntillesEpisodes.length);
+    const antillesList = [];
+
+    characterList.forEach((list) => {
+      list.forEach(url => {
+        if (url.includes(characterId)) {
+          antillesList.push(url);
+        }
+      });
+    });
+
+    console.log(antillesList.length);
   }
 });
