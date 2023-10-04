@@ -2,6 +2,8 @@
 
 <kbd>Front-end</kbd> <kbd>JavaScript</kbd>
 
+[![js-semistandard-style](https://img.shields.io/badge/code%20style-semistandard-brightgreen.svg)](https://github.com/standard/semistandard)
+
 ## General
 * Why JQuery make front-end programming so easy?
 * How to select HTML elements in JavaScript
