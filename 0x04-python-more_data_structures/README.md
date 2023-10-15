@@ -4,7 +4,7 @@
 
 ## Learning Objectives
 
-* Why Python programming is awesome
+**Why Python programming is awesome**
 
 Python is known for its clean and easy-to-read syntax. It uses indentation and whitespace to structure code, which enforces good coding practices and makes it more human-friendly. This simplicity makes Python an excellent choice for beginners and experienced programmers alike.
 
